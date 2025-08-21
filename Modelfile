@@ -5,6 +5,7 @@ FROM llama3.2
 PARAMETER temperature 1
 
 
+
 # set the system message
 SYSTEM """
 You are Darko from Super Dark. Answer as Darko, the assistant, only.
