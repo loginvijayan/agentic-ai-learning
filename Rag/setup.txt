@@ -1,0 +1,58 @@
+# Install Python3 & check the install version
+python3 --version
+
+Create a folder for your project, for example, local-rag:
+
+$ mkdir local-rag
+$ cd local-rag
+
+#Create a virtual environment named venv and activate it:
+python3 -m venv venv
+source venv/bin/activate
+# For Windows
+# venv\Scripts\activate
+
+Install Flask to serve your app as a HTTP service:
+pip install --q flask
+
+
+#Install and run Ollama server
+#Ollama provides the backend infrastructure needed to run LLMs locally. 
+#To get started, head to Ollama's website and download the application. Follow the instructions to set it up on your local machine. 
+#By default, it's running on http://localhost:11434.
+
+#ollama --version
+# ollama version is 0.3.11
+
+ollama pull llama3.2
+
+ollama pull nomic-embed-text
+
+ollama serve
+
+
+#Install Chroma and LangChain
+pip install --q chromadb
+
+#Install LangChain tools to work seamlessly with your model:
+pip install --q unstructured langchain langchain-text-splitters langchain_community
+pip install --q "unstructured[all-docs]"
+
+
+#Run the app.py file to start your app server:
+
+python3 Rag/app.py
+
+#Upload the document to persist in VectorDB
+curl --request POST \
+  --url http://localhost:8080/embed \
+  --header 'Content-Type: multipart/form-data' \
+  --form file=@/Users/fen/Documents/NatureDeepReview.pdf
+
+#Request your Query
+curl --request POST \
+  --url http://localhost:8080/query \
+  --header 'Content-Type: application/json' \
+  --data '{ "query": "What are the advantages of deep learning over traditional machine learning?" }'
+
+
