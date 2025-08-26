@@ -1,12 +1,13 @@
+# LOCAL SETUP for RAG + CHROMA DB
 # Install Python3 & check the install version
 python3 --version
 
 Create a folder for your project, for example, local-rag:
 
-$ mkdir local-rag
-$ cd local-rag
+mkdir local-rag
+cd local-rag
 
-#Create a virtual environment named venv and activate it:
+# Create a virtual environment named venv and activate it:
 python3 -m venv venv
 source venv/bin/activate
 # For Windows
@@ -16,9 +17,9 @@ Install Flask to serve your app as a HTTP service:
 pip install --q flask
 
 
-#Install and run Ollama server
-#Ollama provides the backend infrastructure needed to run LLMs locally. 
-#To get started, head to Ollama's website and download the application. Follow the instructions to set it up on your local machine. 
+# Install and run Ollama server
+# Ollama provides the backend infrastructure needed to run LLMs locally. 
+# To get started, head to Ollama's website and download the application. Follow the instructions to set it up on your local machine. 
 #By default, it's running on http://localhost:11434.
 
 #ollama --version
