@@ -12,6 +12,6 @@ Ollama Library: https://ollama.com/library
 
 Ollama GitHub: https://github.com/ollama/ollama
 
-# RAG + CHROMA DB - Local Service is available file://Rag/README.md
+# RAG + CHROMA DB - Local Service is available <a href="Rag/README.md">Rag/READEME.md</a>
 
 
